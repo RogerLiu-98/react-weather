@@ -4,6 +4,7 @@ import 'antd/dist/antd.css';
 import './index.css';
 import {Avatar, Input, List} from "antd";
 import axios from "axios";
+import fetchJsonp from "fetch-jsonp";
 
 const {Search} = Input;
 const date = new Date();
@@ -41,15 +42,27 @@ class App extends React.Component {
         this.getLocation();
     }
 
+    // Use jsonp to solve the CORB
     fetchData = (url, callback) => {
+        fetchJsonp(url)
+            .then(res => {
+                return res.json()
+            }).then(json => {
+                callback(json)
+            }
+        ).catch(err => {
+            console.log(err)
+        });
+    };
+
+    getData = (url, callback) => {
         axios.get(url)
             .then(res => {
                 callback(res)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    };
+            }).catch(err => {
+            console.log(err)
+        })
+    }
 
     windDirection = windBearing => {
         if (windBearing > 0 && windBearing <= 90) {
@@ -75,40 +88,24 @@ class App extends React.Component {
                 }, callback => {
                     this.fetchData(this.state.baseUrl, res => {
                         this.setState({
-                            timezone: res.data.timezone,
-                            current_data: res.data.currently,
-                            today_data: res.data.daily.data[0],
-                            tomorrow_data: res.data.daily.data[1],
-                            day_after_tomorrow_data: res.data.daily.data[2],
+                            timezone: res.timezone,
+                            current_data: res.currently,
+                            today_data: res.daily.data[0],
+                            tomorrow_data: res.daily.data[1],
+                            day_after_tomorrow_data: res.daily.data[2],
                             loading: false
                         })
                     })
                 })
             })
         } else {
-            this.setState({
-                lat: -35.17,
-                lng: 149.07,
-                baseUrl: "https://api.darksky.net/forecast/fab65de022b3477cc37e14796f99627b/-35.17, 149.07?lang=zh&units=si"
-            }, callback => {
-                this.fetchData(this.state.baseUrl, res => {
-                    this.setState({
-                        timezone: res.data.timezone,
-                        current_data: res.data.currently,
-                        today_data: res.data.daily.data[0],
-                        tomorrow_data: res.data.daily.data[1],
-                        day_after_tomorrow_data: res.data.daily.data[2],
-                        loading: false
-                    })
-                })
-            })
             console.log("Geolocation is not supported by this browser")
         }
     }
 
     render() {
         return (
-            <div className='Main' style={{backgroundImage: "url('pic/"+this.state.current_data.icon+"bg.png')" }}>
+            <div className='Main' style={{backgroundImage: "url('pic/" + this.state.current_data.icon + "bg.png')"}}>
                 <div className='content'>
                     <div className='search'>
                         <Search
@@ -117,7 +114,7 @@ class App extends React.Component {
                             enterButton
                             size="large"
                             onSearch={value => {
-                                this.fetchData("https://maps.googleapis.com/maps/api/geocode/json?address=" + value + "&key=AIzaSyBO6BM6qEG3f7yNdUyEtZG20H3pdCbnM88",
+                                this.getData("https://maps.googleapis.com/maps/api/geocode/json?address=" + value + "&key=AIzaSyBO6BM6qEG3f7yNdUyEtZG20H3pdCbnM88",
                                     res => {
                                         this.setState({
                                                 baseUrl: 'https://api.darksky.net/forecast/fab65de022b3477cc37e14796f99627b/'
@@ -130,11 +127,11 @@ class App extends React.Component {
                                                 this.fetchData(this.state.baseUrl, res => {
                                                     //TODO: Use an iterator to set the data into state
                                                     this.setState({
-                                                        timezone: res.data.timezone,
-                                                        current_data: res.data.currently,
-                                                        today_data: res.data.daily.data[0],
-                                                        tomorrow_data: res.data.daily.data[1],
-                                                        day_after_tomorrow_data: res.data.daily.data[2],
+                                                        timezone: res.timezone,
+                                                        current_data: res.currently,
+                                                        today_data: res.daily.data[0],
+                                                        tomorrow_data: res.daily.data[1],
+                                                        day_after_tomorrow_data: res.daily.data[2],
                                                         loading: false
                                                     })
                                                 });
