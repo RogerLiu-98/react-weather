@@ -86,6 +86,22 @@ class App extends React.Component {
                 })
             })
         } else {
+            this.setState({
+                lat: -35.17,
+                lng: 149.07,
+                baseUrl: "https://api.darksky.net/forecast/fab65de022b3477cc37e14796f99627b/-35.17, 149.07?lang=zh&units=si"
+            }, callback => {
+                this.fetchData(this.state.baseUrl, res => {
+                    this.setState({
+                        timezone: res.data.timezone,
+                        current_data: res.data.currently,
+                        today_data: res.data.daily.data[0],
+                        tomorrow_data: res.data.daily.data[1],
+                        day_after_tomorrow_data: res.data.daily.data[2],
+                        loading: false
+                    })
+                })
+            })
             console.log("Geolocation is not supported by this browser")
         }
     }

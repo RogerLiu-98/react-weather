@@ -124,7 +124,21 @@
       <option name="project" value="LOCAL" />
       <updated>1576023390309</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update package.json">
+      <created>1576027054129</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1576027054129</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update build">
+      <created>1576027098194</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1576027098194</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,7 +147,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Simple react weather project" />
     <MESSAGE value="update background images according to different weathers" />
-    <option name="LAST_COMMIT_MESSAGE" value="update background images according to different weathers" />
+    <MESSAGE value="update package.json" />
+    <MESSAGE value="update build" />
+    <option name="LAST_COMMIT_MESSAGE" value="update build" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="315" key="#ESLint" timestamp="1575978708390">
@@ -152,10 +168,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="698" y="443" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1575976105346" />
-    <state x="589" y="203" key="CommitChangelistDialog2" timestamp="1576027085888">
+    <state x="589" y="203" key="CommitChangelistDialog2" timestamp="1576027097714">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="589" y="203" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1576027085888" />
+    <state x="589" y="203" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1576027097714" />
     <state width="1363" height="268" key="GridCell.Tab.0.bottom" timestamp="1576023335159">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -172,10 +188,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1363" height="268" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1576023335159" />
-    <state x="574" y="424" key="Vcs.Push.Dialog.v2" timestamp="1576027059282">
+    <state x="574" y="424" key="Vcs.Push.Dialog.v2" timestamp="1576027169095">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="574" y="424" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1576027059282" />
+    <state x="574" y="424" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1576027169095" />
     <state x="704" y="601" key="git4idea.rebase.GitRebaseDialog" timestamp="1576023763207">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
