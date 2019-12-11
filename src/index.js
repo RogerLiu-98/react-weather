@@ -92,52 +92,53 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className='Main'>
-                <div className='search'>
-                    <Search
-                        className='searchBar'
-                        placeholder="请输入城市名"
-                        enterButton
-                        size="large"
-                        onSearch={value => {
-                            this.fetchData("https://maps.googleapis.com/maps/api/geocode/json?address=" + value + "&key=AIzaSyBO6BM6qEG3f7yNdUyEtZG20H3pdCbnM88",
-                                res => {
-                                    this.setState({
-                                            baseUrl: 'https://api.darksky.net/forecast/fab65de022b3477cc37e14796f99627b/'
-                                                + res.data.results[0].geometry.location.lat
-                                                + ", "
-                                                + res.data.results[0].geometry.location.lng
-                                                + "?lang=zh&units=si",
-                                        },
-                                        () => {
-                                            this.fetchData(this.state.baseUrl, res => {
-                                                //TODO: Use an iterator to set the data into state
-                                                this.setState({
-                                                    timezone: res.data.timezone,
-                                                    current_data: res.data.currently,
-                                                    today_data: res.data.daily.data[0],
-                                                    tomorrow_data: res.data.daily.data[1],
-                                                    day_after_tomorrow_data: res.data.daily.data[2],
-                                                    loading: false
-                                                })
-                                            });
-                                        })
-                                });
-                        }}
-                    >
-                    </Search>
-                </div>
-                <div className='weather'>
-                    <span className='temperature'>{Math.round(this.state.current_data.temperature) + "°C"}</span>
-                    <span className='weatherIconText'>
+            <div className='Main' style={{backgroundImage: "url('pic/"+this.state.current_data.icon+"bg.png')" }}>
+                <div className='content'>
+                    <div className='search'>
+                        <Search
+                            className='searchBar'
+                            placeholder="请输入城市名"
+                            enterButton
+                            size="large"
+                            onSearch={value => {
+                                this.fetchData("https://maps.googleapis.com/maps/api/geocode/json?address=" + value + "&key=AIzaSyBO6BM6qEG3f7yNdUyEtZG20H3pdCbnM88",
+                                    res => {
+                                        this.setState({
+                                                baseUrl: 'https://api.darksky.net/forecast/fab65de022b3477cc37e14796f99627b/'
+                                                    + res.data.results[0].geometry.location.lat
+                                                    + ", "
+                                                    + res.data.results[0].geometry.location.lng
+                                                    + "?lang=zh&units=si",
+                                            },
+                                            () => {
+                                                this.fetchData(this.state.baseUrl, res => {
+                                                    //TODO: Use an iterator to set the data into state
+                                                    this.setState({
+                                                        timezone: res.data.timezone,
+                                                        current_data: res.data.currently,
+                                                        today_data: res.data.daily.data[0],
+                                                        tomorrow_data: res.data.daily.data[1],
+                                                        day_after_tomorrow_data: res.data.daily.data[2],
+                                                        loading: false
+                                                    })
+                                                });
+                                            })
+                                    });
+                            }}
+                        >
+                        </Search>
+                    </div>
+                    <div className='weather'>
+                        <span className='temperature'>{Math.round(this.state.current_data.temperature) + "°C"}</span>
+                        <span className='weatherIconText'>
                             <span className='weather-text'>{weatherDict[this.state.current_data.icon]}</span>
                             <img src={"pic/" + this.state.current_data.icon + ".png"}
                                  className='weather-icon' alt=""
                             />
                             </span>
-                    <span className='wind'>{this.windDirection(this.state.current_data.windBearing)}</span>
-                    <img className='windDirection-icon' src={"pic/windDirection.png"} alt=""/>
-                    <span className='sunriseToSunset'>
+                        <span className='wind'>{this.windDirection(this.state.current_data.windBearing)}</span>
+                        <img className='windDirection-icon' src={"pic/windDirection.png"} alt=""/>
+                        <span className='sunriseToSunset'>
                             <img className='sunrise' src='pic/sunrise.png' alt=''/>
                             <span className='line'/>
                             <img className='sunset' src='pic/sunset.png' alt=''/>
@@ -148,37 +149,38 @@ class App extends React.Component {
                                 className='sunsetTime'>{new Date(date.setTime(this.state.today_data.sunsetTime * 1000)).toLocaleTimeString('en-US', {timeZone: this.state.timezone})}</span>
                             </span>
                             </span>
-                </div>
-                <div className='forecast'>
-                    <List>
-                        <List.Item>
-                            <List.Item.Meta
-                                avatar={<Avatar src={"pic/" + this.state.today_data.icon + ".png"}/>}
-                                title={new Date(date.setTime(this.state.today_data.time * 1000)).toLocaleDateString('en-US', {timeZone: this.state.timezone})}
-                                description={Math.round(this.state.today_data.temperatureMin) + "°C-" + Math.round(this.state.today_data.temperatureMax) + "°C"}
-                            />
-                            <span style={{fontWeight: "bold"}}>{weatherDict[this.state.today_data.icon]}</span>
-                        </List.Item>
-                        <List.Item>
-                            <List.Item.Meta
-                                avatar={<Avatar
-                                    src={"pic/" + this.state.tomorrow_data.icon + ".png"}/>}
-                                title={new Date(date.setTime(this.state.tomorrow_data.time * 1000)).toLocaleDateString('en-US', {timeZone: this.state.timezone})}
-                                description={Math.round(this.state.tomorrow_data.temperatureMin) + "°C-" + Math.round(this.state.tomorrow_data.temperatureMax) + "°C"}
-                            />
-                            <span style={{fontWeight: "bold"}}>{weatherDict[this.state.tomorrow_data.icon]}</span>
-                        </List.Item>
-                        <List.Item>
-                            <List.Item.Meta
-                                avatar={<Avatar
-                                    src={"pic/" + this.state.day_after_tomorrow_data.icon + ".png"}/>}
-                                title={new Date(date.setTime(this.state.day_after_tomorrow_data.time * 1000)).toLocaleDateString('en-US', {timeZone: this.state.timezone})}
-                                description={Math.round(this.state.day_after_tomorrow_data.temperatureMin) + "°C-" + Math.round(this.state.day_after_tomorrow_data.temperatureMax) + "°C"}
-                            />
-                            <span
-                                style={{fontWeight: "bold"}}>{weatherDict[this.state.day_after_tomorrow_data.icon]}</span>
-                        </List.Item>
-                    </List>
+                    </div>
+                    <div className='forecast'>
+                        <List>
+                            <List.Item>
+                                <List.Item.Meta
+                                    avatar={<Avatar src={"pic/" + this.state.today_data.icon + ".png"}/>}
+                                    title={new Date(date.setTime(this.state.today_data.time * 1000)).toLocaleDateString('en-US', {timeZone: this.state.timezone})}
+                                    description={Math.round(this.state.today_data.temperatureMin) + "°C-" + Math.round(this.state.today_data.temperatureMax) + "°C"}
+                                />
+                                <span style={{fontWeight: "bold"}}>{weatherDict[this.state.today_data.icon]}</span>
+                            </List.Item>
+                            <List.Item>
+                                <List.Item.Meta
+                                    avatar={<Avatar
+                                        src={"pic/" + this.state.tomorrow_data.icon + ".png"}/>}
+                                    title={new Date(date.setTime(this.state.tomorrow_data.time * 1000)).toLocaleDateString('en-US', {timeZone: this.state.timezone})}
+                                    description={Math.round(this.state.tomorrow_data.temperatureMin) + "°C-" + Math.round(this.state.tomorrow_data.temperatureMax) + "°C"}
+                                />
+                                <span style={{fontWeight: "bold"}}>{weatherDict[this.state.tomorrow_data.icon]}</span>
+                            </List.Item>
+                            <List.Item>
+                                <List.Item.Meta
+                                    avatar={<Avatar
+                                        src={"pic/" + this.state.day_after_tomorrow_data.icon + ".png"}/>}
+                                    title={new Date(date.setTime(this.state.day_after_tomorrow_data.time * 1000)).toLocaleDateString('en-US', {timeZone: this.state.timezone})}
+                                    description={Math.round(this.state.day_after_tomorrow_data.temperatureMin) + "°C-" + Math.round(this.state.day_after_tomorrow_data.temperatureMax) + "°C"}
+                                />
+                                <span
+                                    style={{fontWeight: "bold"}}>{weatherDict[this.state.day_after_tomorrow_data.icon]}</span>
+                            </List.Item>
+                        </List>
+                    </div>
                 </div>
             </div>
         );
