@@ -1,3 +1,11 @@
+## 基于React的简易天气查询网页
+
+天气数据来源: [Dark sky](https://darksky.net/dev)
+
+地理位置数据来源: [Google Map](https://developers.google.com/)
+
+[Demo](https://rogerliu-98.github.io/react-weather/build/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
