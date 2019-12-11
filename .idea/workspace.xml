@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b462b27-d504-4c0a-82a3-20f134ee1601" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/pic/clear-daybg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pic/clear-nightbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pic/cloudybg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pic/fogbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pic/partly-cloudy-daybg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pic/partly-cloudy-nightbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pic/rainbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pic/sleetbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pic/snowbg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/pic/windbg.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575895007634</updated>
       <workItem from="1575895009975" duration="5056000" />
-      <workItem from="1575948747029" duration="60939000" />
+      <workItem from="1575948747029" duration="61209000" />
     </task>
     <task id="LOCAL-00001" summary="Simple react weather project">
       <created>1576020190090</created>
@@ -122,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576020190090</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update background images according to different weathers">
+      <created>1576023390309</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576023390309</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,17 +125,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Simple react weather project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simple react weather project" />
+    <MESSAGE value="update background images according to different weathers" />
+    <option name="LAST_COMMIT_MESSAGE" value="update background images according to different weathers" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="315" key="#ESLint" timestamp="1575978708390">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="361" y="315" key="#ESLint/0.0.2560.1400@0.0.2560.1400" timestamp="1575978708390" />
-    <state x="421" y="324" key="#Notifications" timestamp="1575895310055">
+    <state x="421" y="324" key="#Notifications" timestamp="1576023588989">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="421" y="324" key="#Notifications/0.0.2560.1400@0.0.2560.1400" timestamp="1575895310055" />
+    <state x="421" y="324" key="#Notifications/0.0.2560.1400@0.0.2560.1400" timestamp="1576023588989" />
     <state x="180" y="312" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575895625093">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -149,10 +145,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="698" y="443" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1575976105346" />
-    <state x="589" y="203" key="CommitChangelistDialog2" timestamp="1576020189465">
+    <state x="589" y="203" key="CommitChangelistDialog2" timestamp="1576023631368">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="589" y="203" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1576020189465" />
+    <state x="589" y="203" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1576023631368" />
     <state width="1363" height="268" key="GridCell.Tab.0.bottom" timestamp="1576023335159">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -169,10 +165,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1363" height="268" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1576023335159" />
-    <state x="574" y="424" key="Vcs.Push.Dialog.v2" timestamp="1576020207732">
+    <state x="574" y="424" key="Vcs.Push.Dialog.v2" timestamp="1576023616281">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="574" y="424" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1576020207732" />
+    <state x="574" y="424" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1576023616281" />
     <state x="325" y="307" key="run.anything.popup" timestamp="1575989044202">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
