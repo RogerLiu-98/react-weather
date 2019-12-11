@@ -167,7 +167,28 @@
       <option name="project" value="LOCAL" />
       <updated>1576029634683</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update build">
+      <created>1576030190922</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576030190922</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update build">
+      <created>1576030291981</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1576030291981</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update build">
+      <created>1576030311281</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1576030311281</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,10 +219,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="698" y="443" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1575976105346" />
-    <state x="1042" y="221" key="CommitChangelistDialog2" timestamp="1576030291504">
+    <state x="1042" y="221" key="CommitChangelistDialog2" timestamp="1576030310720">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1042" y="221" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1576030291504" />
+    <state x="1042" y="221" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1576030310720" />
     <state width="1363" height="268" key="GridCell.Tab.0.bottom" timestamp="1576028380776">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -218,10 +239,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1363" height="268" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1576028380776" />
-    <state x="574" y="424" key="Vcs.Push.Dialog.v2" timestamp="1576030195621">
+    <state x="574" y="424" key="Vcs.Push.Dialog.v2" timestamp="1576030314690">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="574" y="424" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1576030195621" />
+    <state x="574" y="424" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1576030314690" />
     <state x="704" y="601" key="git4idea.rebase.GitRebaseDialog" timestamp="1576023763207">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
